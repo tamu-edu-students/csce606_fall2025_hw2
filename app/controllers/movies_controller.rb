@@ -11,8 +11,6 @@ class MoviesController < ApplicationController
 
     if sort.present?
       @movies = Movie.order("#{sort} #{direction}")
-      session[:sort] = sort
-      session[:direction] = direction
     else
       @movies = Movie.all
     end
