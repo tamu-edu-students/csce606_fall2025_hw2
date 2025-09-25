@@ -1,10 +1,188 @@
-/*
- * This is a manifest file that'll be compiled into application.css.
- *
- * With Propshaft, assets are served efficiently without preprocessing steps. You can still include
- * application-wide styles in this file, but keep in mind that CSS precedence will follow the standard
- * cascading order, meaning styles declared later in the document or manifest will override earlier ones,
- * depending on specificity.
- *
- * Consider organizing styles into separate files for maintainability.
- */
+body {
+  font-family: Arial, sans-serif;
+}
+
+.page-container {
+  max-width: 900px;
+  margin: 20px auto;
+  padding: 20px;
+  background: #fffefc;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  box-shadow: 2px 2px 5px rgba(0,0,0,0.1);
+}
+
+.page-title {
+  font-size: 2em;
+  margin-bottom: 0.5em;
+  color: #2c3e50;
+  border-bottom: 2px solid #ccc;
+  padding-bottom: 5px;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+  margin-top: 1em;
+}
+
+th, td {
+  border: 1px solid #ccc;
+  padding: 8px 12px;
+  text-align: left;
+}
+
+thead {
+  background-color: #f5f5f5;
+}
+
+tfoot td {
+  text-align: center;
+  font-style: italic;
+  background-color: #fafafa;
+}
+
+th.sorted-asc {
+  background-color: #e0f7fa; 
+  color: #006064;
+}
+
+th.sorted-desc {
+  background-color: #fce4ec; 
+  color: #880e4f;
+}
+
+.movie-details {
+  border-collapse: collapse;
+  width: 100%;
+  margin-bottom: 1em;
+}
+
+.movie-details th {
+  text-align: left;
+  padding: 6px;
+  width: 150px;
+  background-color: #f9f9f9;
+  font-weight: bold;
+}
+
+.movie-details td {
+  padding: 6px;
+  border-bottom: 1px solid #ddd;
+}
+
+.form-group {
+  margin-bottom: 1em;
+}
+
+label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 0.3em;
+}
+
+input[type="text"],
+input[type="date"],
+select,
+textarea {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #bbb;
+  border-radius: 4px;
+  font-size: 1em;
+}
+
+.btn,
+input[type="submit"].btn {
+  display: inline-block;
+  padding: 6px 12px;
+  margin: 4px 2px;
+  border-radius: 4px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+  width: 140px;   
+  text-align: center;
+}
+
+.btn {
+  display: inline-block;
+  padding: 6px 12px;
+  margin: 4px 2px;
+  border-radius: 4px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.btn-primary {
+  background-color: #3498db;
+  color: white;
+}
+
+.btn-primary:hover {
+  background-color: #217dbb;
+}
+
+.btn-secondary {
+  background-color: #95a5a6;
+  color: white;
+}
+
+.btn-secondary:hover {
+  background-color: #7f8c8d;
+}
+
+.btn-danger {
+  background-color: #e74c3c;
+  color: white;
+}
+
+.btn-danger:hover {
+  background-color: #c0392b;
+}
+
+/* === Actions container === */
+.actions {
+  margin-top: 1em;
+}
+
+/* Flash messages */
+.flash {
+  padding: 10px 15px;
+  margin: 10px auto;
+  border-radius: 4px;
+  font-weight: bold;
+  width: 90%;
+  max-width: 800px;
+  text-align: center;
+}
+
+/* Success (create, update, delete) */
+.flash.notice {
+  background-color: #e8f5e9;  /* light green */
+  border: 1px solid #2e7d32; /* dark green */
+  color: #2e7d32;
+}
+
+/* Error or alert */
+.flash.alert {
+  background-color: #fdecea;  /* light red */
+  border: 1px solid #c0392b;
+  color: #c0392b;
+}
+
+/* Form container */
+.form-container {
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  background-color: #fafafa;
+  margin-bottom: 20px;
+}
+
+/* Center the submit button inside form */
+.form-actions {
+  text-align: center;
+  margin-top: 15px;
+}

@@ -1,10 +1,30 @@
-<p style="color: green"><%= notice %></p>
+<% flash.each do |key, message| %>
+  <div class="flash <%= key %>"><%= message %></div>
+<% end %>
 
-<%= render @movie %>
+<div class="page-container">
+  <h1 class="page-title"><%= @movie.title %></h1>
 
-<div>
-  <%= link_to "Edit this movie", edit_movie_path(@movie) %> |
-  <%= link_to "Back to movies", movies_path %>
+  <table class="movie-details">
+    <tbody>
+      <tr>
+        <th>Rating:</th>
+        <td><%= @movie.rating %></td>
+      </tr>
+      <tr>
+        <th>Release Date:</th>
+        <td><%= @movie.release_date %></td>
+      </tr>
+      <tr>
+        <th>Description:</th>
+        <td><%= @movie.description %></td>
+      </tr>
+    </tbody>
+  </table>
 
-  <%= button_to "Destroy this movie", @movie, method: :delete %>
+  <div class="actions">
+    <%= link_to "Edit this movie", edit_movie_path(@movie), class: "btn btn-primary" %>
+    <%= link_to "Back to movies", movies_path, class: "btn btn-secondary" %>
+    <%= button_to "Destroy this movie", @movie, method: :delete, class: "btn btn-danger" %>
+  </div>
 </div>

@@ -1,18 +1,20 @@
-<p style="color: green"><%= notice %></p>
+<% flash.each do |key, message| %>
+  <div class="flash <%= key %>"><%= message %></div>
+<% end %>
 
 <% content_for :title, "Movies" %>
-
-<h1>Movies</h1>
-
-<table>
+<div class="page-container">
+  <h1 class="page-title">Movies</h1>
+  <table>
   <thead>
     <tr>
-      <th>Title</th>
-      <th>Rating</th>
-      <th>Release Date</th>
+      <th class="<%= header_class('title') %>"><%= sortable("title", "Title") %></th>
+      <th class="<%= header_class('rating') %>"><%= sortable("rating", "Rating") %></th>
+      <th class="<%= header_class('release_date') %>"><%= sortable("release_date", "Release Date") %></th>
       <th>Actions</th>
     </tr>
   </thead>
+
 
   <tbody>
     <% @movies.each do |movie| %>
@@ -20,7 +22,7 @@
         <td><%= movie.title %></td>
         <td><%= movie.rating %></td>
         <td><%= movie.release_date %></td>
-        <td><%= link_to "Show this movie", movie %></td>
+        <td><%= link_to "Show this movie", movie, class: "btn btn-primary" %></td>
       </tr>
     <% end %>
   </tbody>
@@ -28,8 +30,12 @@
   <tfoot>
     <tr>
       <td colspan="4">
-        <%= link_to "New movie", new_movie_path %>
+        <%= link_to "New movie", new_movie_path, class: "btn btn-primary" %>
+
       </td>
     </tr>
   </tfoot>
 </table>
+
+</div>
+
