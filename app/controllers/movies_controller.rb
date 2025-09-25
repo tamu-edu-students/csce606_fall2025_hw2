@@ -3,8 +3,8 @@ class MoviesController < ApplicationController
 
   # GET /movies or /movies.json
   def index
-    sort = params[:sort] || session[:sort]
-    direction = params[:direction] || session[:direction]
+    sort = params[:sort]
+    direction = params[:direction]
 
     # default direction is ascending if not given
     direction = %w[asc desc].include?(direction) ? direction : "asc"
